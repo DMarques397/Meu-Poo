@@ -40,6 +40,14 @@ class Pou:
         self.amor = int(amor)
         self.lista = [self.felicidade, self.niveldefome, self.sujidade, self.rebeldia, self.carinho,self.amor, self.nome]
 #felicidade
+
+    def perda(self):
+
+        if self.rebeldia >= 100:
+            print("Estas muito rebelde, morreste tristemente!")
+
+
+    """
     def perda0(self):
         self.lista[1] += 5
         if self.lista[1] < 0:
@@ -329,7 +337,7 @@ class Pou:
             time.sleep(1)
             sys.exit()
         self.lista[3] -= 5
-        f.lista[3] > 100:
+        self.lista[3] > 100:
             self.lista[3] = 100
             print("O pou já está demasiado rebelde e morreu numa troca de tiro")
             pygame.time.delay(1)
@@ -348,6 +356,8 @@ class Pou:
         if self.lista[4] > 100:
             self.lista[4] = 100
             print("O pou já recebeu demasiado carinho")
+            
+    """
 
     def limites(self):
 
@@ -399,19 +409,10 @@ class Pou:
             sys.exit()
 
     def miudodagangue(self):
-        if self.lista[3] > 0:
-            self.lista[3] += 25
+        if self.rebeldia > 0:
+            self.rebeldia += 25
             print("O teu pou foi rebelde")
-        if self.lista[3] > 100:
-            self.lista[3] = 100
-            print("O pou já está demasiado rebelde e morreu numa troca de tiro")
-            pygame.quit()
-            sys.exit()
-        if self.lista[3] < 0:
-            self.lista[3] = 0
-            print(" O teu pou precisa de rebeldia")
-            pygame.quit()
-            sys.exit()
+
 
     def coracao(self):
         if self.lista[4] < 0:
